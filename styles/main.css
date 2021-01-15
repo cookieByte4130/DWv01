@@ -1,0 +1,997 @@
+/*============================
+UTILITIES
+============================*/
+body{
+  background-color: black;
+}
+
+a:hover{
+  text-decoration: none;
+  margin: 0;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+button:focus{
+  outline: unset !important;
+}
+
+.forceField{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: -3800;
+}
+
+.customBtn{
+  border-radius: 10%;
+  font-weight: bold;
+  background-image: linear-gradient(to bottom, #bf9e23, #551e00);
+  color: #deb516;
+}
+
+
+.customBtnMain{
+  background-image: linear-gradient(to bottom, #a36ff7, #551e00);
+}
+
+.customBtn:hover{
+  color: #ffc534;
+  box-shadow: 1px 1px 21px rgba(0,0,0,.25);
+  cursor: pointer;
+}
+
+.form-control:focus{
+  box-shadow: 0 0 0 0.2rem rgba(51, 11, 101, 0.48);
+  border-color: #3a1069;
+}
+
+
+.screen{
+  margin: 2.25rem auto;
+}
+
+.closeScreen{
+  position: absolute;
+  margin: 0;
+  right: 15px;
+  top: -2px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 2rem;
+  color: white;
+}
+
+/*============================
+HERO
+============================*/
+.HeroSpells,
+.HeroAbilities{
+  list-style-type: none;
+  font-size: 12px;
+  overflow: scroll;
+  height: 10rem;
+}
+
+.HeroImg{
+  background-image: url('../assets/gamingIcon.png');
+}
+
+/*============================
+NOTICE
+============================*/
+.notice{
+  position: absolute;
+  z-index: 9999;
+  top: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25rem;
+  background-color: #000000c7;
+  color: white;
+}
+
+.noticeText{
+  margin: 2rem;
+  text-align: center;
+}
+
+.notice a{
+  width: 7rem;
+}
+
+/*============================
+WELCOME
+============================*/
+.welcome{
+  margin: 2.25rem auto;
+  padding: 2rem 0;
+  background-image: radial-gradient(#faab2a 42%, #551e00 95%);
+}
+
+.welcome h1,
+.welcome button{
+  margin: 3rem 0;
+}
+
+
+.welcome .imageContainer{
+  margin: 3rem 0;
+  height: 20rem;
+  width: 100%;
+  background-image: url('../assets/bgWelcome.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.welcome button{
+  padding: 1rem 3rem;
+  font-size: 2.5rem;
+}
+
+.welcome h1,
+.createDragon h1{
+  color: #21064a;
+}
+/*============================
+CREATE NEW DRAGON
+============================*/
+.createDragon{
+  padding: 2rem;
+  background-image: radial-gradient(#faab2abf 42%, #551e00 95%),url('../assets/bgCreateDragon.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.createDragon h1{
+  margin-top: 4rem;
+}
+
+.nameDragonLabel,
+.createDragon p{
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.nameDragonLabel{
+  display: block;
+  margin: 2rem auto 0.5rem auto;
+}
+
+.nameDragon{
+  margin: 0.5rem auto;
+  max-width: 25rem;
+}
+
+.nameDragon::placeholder{
+  text-align: center;
+}
+
+.elSelect{
+  margin-bottom: 4rem;
+}
+
+.el{
+  max-width: 25rem;
+  margin: 1rem auto;
+  padding: .5rem;
+  border: 4px solid transparent;
+  background-color: #ffffffab;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  background-size: cover;
+  background-position: center;
+}
+
+.elFire{
+  background-image: linear-gradient( to right bottom, rgba(193, 59, 49 ,0.8), rgba(254, 183, 35, 0.8)), url(../assets/bgFire.jpg);
+}
+
+.elWater{
+  background-image: linear-gradient( to right bottom, rgba(77, 158, 197 ,0.8), rgba(77, 197, 169, 0.8)), url(../assets/bgWater.jpg);
+  
+}
+.elAir{
+  background-image: linear-gradient( to right bottom, rgba(188, 207, 225 ,0.8), rgba(226, 236, 234, 0.8)), url(../assets/bgAir.jpeg);
+}
+.elRock{
+  background-image: linear-gradient( to right bottom, rgba(125, 119, 133 ,0.8), rgba(65, 133, 69, 0.8)), url(../assets/bgRock.jpg);
+}
+
+.nameDragon:hover,
+.el:not(.elSelected):hover {
+  box-shadow: 1px 1px 21px rgba(0,0,0,.25);
+  cursor: pointer;
+}
+
+.elSelected{
+  border-color: #3a1069;
+  color: #f4c02e;
+}
+
+.statsPreview{
+  margin: 3rem;
+  background-color: #fdd48f9e;
+}
+
+.statsPreview>div{
+  margin: 2.5rem 0;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.createBtn{
+  display: block;
+}
+
+/*============================
+INTRO & END
+============================*/
+.intro,
+.end{
+  position: relative;
+}
+.slideBtns{
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+}
+
+.pageContainer{
+  position: relative;
+  height: 80vh;
+}
+
+.introText,
+.endText{
+  color: white;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.intro0 .introText,
+.intro8 .introText{
+  top: 35%;
+  transform: translate(-50%,-50%);
+}
+
+.introPic,
+.endPic{
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 15%;
+  width: 100%;
+  height: 40vh;
+  filter: sepia(1);
+}
+
+.intro1 .introPic{
+  background-image: url('../assets/intro1.jpeg');
+}
+.intro2 .introPic{
+  background-position: 10% 86%;
+  background-image: url('../assets/intro2.png');
+}
+.intro3 .introPic{
+  background-image: url('../assets/intro3.jpeg');
+}
+.intro4 .introPic{
+  background-image: url('../assets/intro4.jpeg');
+}
+.intro5 .introPic{
+  background-size: contain;
+  background-image: url('../assets/intro5.jpg');
+}
+.intro6 .introPic{
+  background-image: url('../assets/intro6.jpeg');
+}
+.intro7 .introPic{
+  background-position: 100% 100%;
+  background-image: url('../assets/intro7.jpeg');
+}
+
+.end0 .endPic{
+  background-image: url('../assets/end0.jpeg')
+}
+
+.end1 .endPic{
+  background-image: url('../assets/end1.jpeg')
+}
+
+.end2 .endPic{
+  background-image: url('../assets/end2.jpeg')
+}
+
+/*============================
+NEST and LANDS
+============================*/
+.optionsMenu{
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.nest,
+.landScreen{
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+.nestScreen-header,
+.landScreen-header{
+  position: absolute;
+  top: 1rem;
+  width: 100%;
+  padding: 1.5rem;
+  background-image: linear-gradient(to right, #4c9dc6, #4c9dc6 40%, #00000000);
+}
+
+.toWorldMapBtn{
+  margin-bottom: 1rem;
+  animation: wiggling 3s ease infinite alternate both;
+}
+
+.rightArrow{
+  clip-path: polygon(0 20%,75% 20%,75% 0,100% 50%,75% 100%,75% 80%,0 80%);
+  padding: 1rem 1rem 1rem .5rem;
+}
+
+.leftArrow{
+  clip-path: polygon(0 50%,25% 0,25% 20%, 100% 20%,100% 80%,25% 80%,25% 100%,0 50%);
+  padding: 1rem .5rem 1rem 1rem;
+}
+
+.nest .row div{
+  overflow: hidden;
+}
+
+.charactersContainer{
+  height: 23rem;
+  background-image: url('../assets/gamingIcon.png');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+}
+
+.characterContainer{
+  width: 10%;
+}
+
+.characterName{
+  font-size: 1rem;
+}
+
+.characterImage{
+  background-position: 50% 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100px;
+  animation: breathing 1s ease-in-out infinite alternate both;
+}
+
+.elder:hover,
+.plant:hover,
+.enemy:hover,
+.boss:hover,
+.toWorldMapBtn:hover{
+  cursor: pointer;
+}
+
+.elder:hover,
+.plant:hover,
+.enemy:hover{
+  filter: brightness(1.25);
+}
+
+.elder1 > .characterImage{
+  background-image: url('../assets/elder1.jpg');
+}
+
+.elder2 > .characterImage{
+  background-image: url('../assets/elder2.png');
+}
+
+.plant0 > .characterImage{
+  background-image: url('../assets/seaweed.jpg');
+}
+
+.plant1 > .characterImage{
+  background-image: url('../assets/coral.jpg');
+}
+
+.plant2 > .characterImage{
+  background-image: url('../assets/brush.jpg');
+}
+
+.ground{
+  width: 100%;
+  height: 30px;
+  background-repeat: repeat-x;
+  background-image: url('../assets/ground.png');
+}
+
+/*============================
+DRAGON STATS
+============================*/
+.dragonStatsContainer{
+  border: 5px ridge #a9a9a9;
+  background-image: linear-gradient(to top, #464646d1, #000000e0);
+  color: #d6d6d6;
+  font-size: 1rem;
+}
+
+.dragonStatsToggle{
+  padding-right: 1rem;
+  padding-top: .5rem;
+}
+
+.dragonStats{
+  padding: 1rem;
+}
+
+.dragonStats h2{
+  margin-bottom: 1rem;
+}
+
+.stats{
+  border: 1px solid #565656;
+  text-align: center;
+  height: 150px;
+}
+.stats span{
+  font-size: .75rem;
+  font-style: italic;
+}
+
+.statsAbilities,
+.statsSpells{
+  overflow: scroll;
+}
+
+.nest .row .runesContainerPos{
+  position: relative;
+  overflow: visible;
+}
+
+.runesContainer{
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.table{
+  margin: none;
+  background: none;
+}
+
+td{
+  border: none!important;
+}
+
+.rune{
+  height: 4rem;
+  width: 4rem;
+  padding: 0;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: 98%;
+  background-position: center;
+  border-radius: 50%;
+}
+.runeair{
+  background-image: url('../assets/runeAir.png'),radial-gradient(#ededed70 39%, #e2dcd8c9 60%);
+}
+.runewater{
+  background-image: url('../assets/runeWater.png'),radial-gradient(#ededed70 39%, #e2dcd8c9 60%);
+}
+.runefire{
+  background-image: url('../assets/runeFire.png'),radial-gradient(#ededed70 39%, #e2dcd8c9 60%);
+}
+.runerock{
+  background-image: url('../assets/runeRock.png'),radial-gradient(#ededed70 39%, #e2dcd8c9 60%);
+}
+
+.pulsing{
+  animation: pulse 2s infinite;
+}
+
+/*============================
+WORLDMAP
+============================*/
+.worldMap{
+  background-image: linear-gradient(to right, #0673d0, #066ec9);
+  overflow: hidden;
+}
+
+.worldMap-header{
+  position: relative;
+  margin-top: .5rem;
+  padding: 2rem 1rem;
+  color: #fffeea;
+  background-image: linear-gradient(to right, #4b6528, #75975b 40%, #00000000);
+}
+
+.worldMapBtnsContainer{
+  display: block;
+  height: 40rem;
+  position:relative;
+  overflow: scroll;
+}
+
+.worldMapBtnsContainer img{
+  z-index: 0;
+  width: 1110px;
+}
+
+.worldMapBtn{
+  position:absolute;
+  height: 2rem;
+  width: 2rem;
+  font-weight: bold;
+  border-radius: 50%;
+  border: 1px solid white;
+  color: #ffffff00;
+  animation: brighten 1s ease-in-out infinite alternate both; ;
+}
+
+.fireLand{
+  background-color: rgba(193, 59, 49 ,0.8);
+  top: 10rem;
+  left: 15.25rem;
+}
+
+.waterLand{
+  background-color: rgba(77, 158, 197 ,0.8);
+  top: 23rem;
+  left: 48.5rem;
+}
+
+.airLand{
+  background-color: rgba(146, 199, 249 ,0.8);
+  top: 18rem;
+  left: 29.5rem;
+}
+
+.rockLand{
+  background-color: rgba(125, 119, 133 ,0.8);
+  top: 24rem;
+  left: 8rem;
+}
+
+.finalBoss{
+  color: #fff;
+  height: 5rem;
+  width: 5rem;
+  top: 21rem;
+  left: 22rem;
+  background-color: #a566e8bf;
+}
+
+.worldMapBtn:hover{
+  border: 2px solid white;
+  color: white;
+  box-shadow: 2px 5px 11px rgba(75, 87, 77, 1);
+  cursor: pointer;
+  animation: .25s linear zooming forwards;
+}
+
+.finalBoss:hover{
+  background-color: #8315f7;
+}
+
+@keyframes zooming{
+  0%{
+    color: #ffffff00;
+  }
+  100%{
+    color: #fff;
+    height: 5rem;
+    width: 5rem;
+  }
+}
+
+/*============================
+BATTLE
+============================*/
+.battleScreen{
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+.battleScreen-header{
+  position: absolute;
+  top: 1rem;
+  width: 100%;
+  padding: 1.5rem;
+  background-image: linear-gradient(to right, #6e0000, #f4433600);
+}
+
+.battleOptions{
+  z-index: 100;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 20rem;
+  width: 30rem;
+  padding: 1rem;
+  background-image: linear-gradient(to bottom, #464646d1, #000000e0);
+  color: white;
+}
+
+.battleOptions p{
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 550;
+  letter-spacing: 10px;
+  color: #deb518;
+}
+
+.battleOptions b{
+  color: #b5b5b5;
+}
+
+.battleOptions .row{
+  height: 85%;
+  overflow: scroll;
+}
+
+.battleOptions li{
+  margin: .5rem 0;
+  padding: .25rem;
+  border: 1px solid #b5b5b5;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.battleOptions .HeroAbilities,
+.battleOptions .HeroSpells{
+  height: auto;
+}
+
+.battleOptions .HeroAbilities li:hover,
+.battleOptions .HeroSpells li:hover{
+  color: #deb518;
+  border-color: #deb518;
+  cursor: pointer;
+}
+
+.battleOptions .selected{
+  border: 1px solid #deb518;
+}
+
+.battleScreen .charactersContainer{
+  height: 32rem;
+}
+
+.battleScreen .characterContainer{
+  width: 50%;
+}
+
+.battleUpdates{
+  font-size: 1.5rem;
+}
+
+.battleScreen .characterImage{
+  height: 7rem;
+}
+
+.dead{
+  animation: dying 2s linear;
+}
+
+.battleScreen .progress{
+  position: relative;
+  height: .75rem;
+  width: 8rem;
+  margin: 0 auto;
+  background-color: #e9ecef8c!important;
+}
+
+.hpBar{
+  margin-bottom: 0.5rem;
+}
+
+.mpBar{
+  margin-bottom: 1.5rem;
+}
+
+.hpBar .progress-bar{
+  background-color: #5fb108 !important;
+  width: 100%;
+}
+
+.mpBar .progress-bar{
+  background-color: #0855db !important;
+  width: 100%;
+}
+
+.battleScreen .progress .progressbar-label{
+  position: absolute;
+  padding-left: 6px;
+}
+
+.battleScreen .HeroImg,
+.battleScreen .EnemyImg{
+  height: 12rem;
+  margin: 0;
+}
+
+.ui-tabs-anchor{
+  width:10rem;
+  font-size: 1.25rem;
+  font-family: Monospace!important;
+}
+
+.tabContainer,
+.tabContainer ul,
+.tabContainer li{
+  background: none!important;
+  border: none!important;
+}
+
+.tabContainer li{
+  color: #b9b9b9!important;
+  margin-left: 0.5rem!important;
+  border: 1px solid #b9b9b9!important;
+  background-image: linear-gradient(to bottom, #383838, #000)!important;
+  border-bottom: none!important;
+}
+
+.tabContainer a{
+  color: inherit!important;
+}
+
+.tabContainer a:hover{
+  color: white!important;
+  cursor: pointer;
+}
+
+.tabSubContainer{
+  border: 1px solid #deb518;
+  border-radius: 5px;
+}
+
+.tabDisplay{
+  height: 223px;
+  border-top: 1px solid #b9b9b9;
+  color: #b9b9b9;
+  font: 1.25rem Monospace;
+  overflow: scroll;
+}
+
+.tabContainer li[aria-selected='true'] {
+  color: #deb518!important;
+  border-color: #deb518!important;
+}
+
+/*============================
+CREDITS
+============================*/
+.thx4testing{
+  height: 90vh;
+  position: relative;
+}
+.credits{
+  margin-bottom: 3rem;
+  font-size: 1rem;
+  line-height: 3rem;
+  color: white;
+  position: absolute;
+  top: 110%;
+  animation: 20s linear credits;
+}
+.credits p:first-child{
+  font-size: 1.5rem;
+}
+
+/*============================
+MEDIA QUERIES
+============================*/
+
+@media screen and (max-width: 1200px){
+  .welcome h1,
+  .welcome button{
+    margin: 3rem 0;
+  }
+  .landScreen .charactersContainer{
+    height: 20rem;
+  }
+  .landScreen .characterImage{
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 990px){
+  .welcome h1,
+  .welcome button{
+    margin: 0;
+  }
+  .characterName{
+    font-size: .75rem;
+  }
+  .worldMap-header{
+    margin-top: .5rem;
+    padding: 2rem 1rem;
+    color: #fffeea;
+    background-image: linear-gradient(to right, #4b6528, #75975b 40%, #00000000);
+  }
+  .worldMapBtnsContainer img{
+    width: 700px;
+  }
+  .fireLand{
+    top: 6.5rem;
+    left: 10.25rem;
+  }
+  .waterLand{
+    top: 14rem;
+    left: 30.5rem;
+  }
+  .airLand{
+    top: 12rem;
+    left: 19rem;
+  }
+  .rockLand{
+    top: 15rem;
+    left: 5rem;
+  }
+  .finalBoss{
+    top: 12rem;
+    left: 13rem;
+  }
+  .battleScreen .charactersContainer{
+    height: 25rem;
+  }
+  .battleScreen .HeroImg,
+  .battleScreen .EnemyImg{
+    height: 5rem;
+  }
+}
+
+@media screen and (max-width: 780px){
+  .welcome h1,
+  .welcome button{
+    margin: 3rem 0;
+  }
+  .worldMapBtnsContainer img{
+    width: 600px;
+  }
+  .fireLand{
+    top: 5.5rem;
+    left: 8.25rem;
+  }
+  .waterLand{
+    top: 12rem;
+    left: 24.75rem;
+  }
+  .airLand{
+    top: 10rem;
+    left: 17rem;
+  }
+  .rockLand{
+    top: 12.5rem;
+    left: 4rem;
+  }
+  .finalBoss{
+    top: 9rem;
+    left: 11.5rem;
+  }
+  .battleScreen-header{
+    padding: .5rem;
+  }
+  .battleOptions{
+    height: 12rem;
+  }
+  .battleOptions .row{
+   height: 75%;
+  }
+  .battleOptions li {
+    margin: .25rem 0;
+    padding: .1rem;
+    font-size: .75rem;
+  }
+  .battleScreen .charactersContainer{
+    height: 20rem;
+  }
+  .ui-tabs-anchor{
+    width:6rem;
+    font-size: .75rem;
+  }
+  .characterContainer{
+    width: 25%;
+  }
+  .characterImage{
+    height: 70px;
+  }
+  .ground{
+    height: 20px;
+  }
+  .thx4testing p{
+    margin-bottom: 2rem;
+    font-size: .75rem;
+  }
+  
+}
+
+/*============================
+ANIMATIONS
+============================*/
+/*If I had sprites I would have had the actors do something like walk around or dance*/
+@keyframes breathing{
+  0%{
+    width: 99%;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+/*It's a little cheesy but it gently calls the viewers attention*/
+@keyframes wiggling{
+  0%{
+    transform: rotate(-5deg);
+  }
+  100%{
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes brighten{
+  0%{
+    filter: brightness(1);
+  }
+  100%{
+    filter: brightness(1.5);
+  }
+}
+
+@keyframes dying{
+  0%{
+    filter: blur(0);
+  }
+  100%{
+    filter: blur(30px);
+  }
+}
+
+@keyframes pulse{
+  0%{
+    box-shadow: 0 0 5px #deb517
+  }
+  50%{
+    box-shadow: 0 0 25px #deb517
+  }
+  100%{
+    box-shadow: 0 0 5px #deb517
+  }
+}
+
+@keyframes credits{
+  0%{
+    top: 110%;
+  }
+  100%{
+    top: -110%;
+  }
+}

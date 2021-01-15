@@ -1,0 +1,146 @@
+/*====================================
+THEME COLORS
+=====================================
+ bright green: #c7f92b
+ green-transparent: #99cc1e9e
+ darker green #728c21
+ darkest green #435214*/
+
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-family: Comic Sans MS;
+}
+
+body{
+  margin: 2em;
+}
+
+p{font-size: 18px;}
+
+h1{
+  text-align: center;
+  margin-bottom: 2rem;
+}
+/*===================================
+BUTTONS
+===================================*/
+.button{
+  display: inline-block;
+  padding: .25em;
+  margin: .5em;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+  border-radius: 3px;
+}
+
+button:hover{
+  outline: 1px solid grey;
+}
+
+/*===================================
+CANVAS
+===================================*/
+canvas{
+  display: block;
+  border: 2px solid black;
+  background-color: #ffffff70;
+}
+
+/*===================================
+TOOLS
+===================================*/
+.Selected{
+  border: 2px solid #0000006b;
+}
+
+/*===================================
+COLORS
+===================================*/
+.colorSelection{
+  display: inline-block;
+  margin-left: 3rem;
+}
+
+.color{
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 2px;
+  border-radius: 50%;
+}
+
+#redPen{
+  background: #f00;
+}
+
+#orangePen{
+  background: #ff8000;
+}
+
+#yellowPen{
+  background: #ff0;
+}
+
+#greenPen{
+  background: #0f0;
+}
+
+#cyanPen{
+  background: #0ff;
+}
+
+#bluePen{
+  background: #00f;
+}
+
+#violetPen{
+  background: #8000ff;
+}
+
+#blackPen{
+  background: #0000009e;
+}
+
+#whitePen{
+  background: #ffffffe3;
+}
+
+#customColor{
+  margin-left: 2rem;
+}
+
+/*===================================
+THICKNESS
+===================================*/
+.thicknessSelection{
+  display: inline-block;
+  margin-left: 3rem;
+}
+
+.thicknessSelection>button{
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  border: none;
+  background-position: center;
+}
+
+#smMarker{
+  background-image: url('small.png');
+}
+#medMarker{
+  background-image: url('medium.png');
+}
+#lgMarker{
+  background-image: url('large.png');
+}
+
+
+/*===================================
+MISC
+===================================*/
+.hideMe{
+  display: none;
+}
