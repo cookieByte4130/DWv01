@@ -16,12 +16,12 @@ If you have any questions or comments regarding this app please email me at amal
 If you would like to contribute to Dragon Worlds please do! I am open to all suggestions and help with this project. Content must be PG to keep it kid friendly.
 
 ## Authors and acknowledgment
-Game concept: Kelsey Winterkorn
+Game concept: Raccoon
 Code architect and writer: Amalia Bryant
 Beta testers: TLM track 1 2019-2020
 
 ## License
-Currently unlicensed
+[MIT 2021 Amalia Bryant](https://choosealicense.com/licenses/mit/)
 
 ## Project status
 Complete...for now
