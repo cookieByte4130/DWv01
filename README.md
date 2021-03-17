@@ -6,7 +6,15 @@
 
 Dragon Worlds is a game where users create a character by entering a name and selecting an element.
 ![Character Creation](./assets/screenShotCharCreation.png)
-The player's stats vary based on the element selected. Players can see the effects by hovering the mouse over the different elements prior to finializing their character. After creating a character, players will have the opportunity to see the intro story or skip the intro. Players will talk to the elders to gain spells and abilities they can use in their quest to collect the runes. After learning a spell and an ability players can go out to the world map where they can select different lands to visit. Throughout the game players can save their progress. As players level up they can return to their 'nest' and speak to the elders to gain more spells and abilities. In each land is another rune. Players must battle each type of enemy in a land to unlock the boss of that land. After defeating the boss they will collect the rune. Once a player has gathered all the runes a new location will appear on the world map where they will have the opportunity to battle the final boss and win the game.
+The player's stats vary based on the element selected. Players can see the effects by hovering the mouse over the different elements prior to finializing their character. After creating a character, players will have the opportunity to see the intro story or skip the intro. Players will talk to the elders to gain spells and abilities they can use in their quest to collect the runes.
+![Nest](./assets/screenShotNest.png)
+After learning a spell and an ability players can go out to the world map where they can select different lands to visit.
+![First Rune](./assets/screenShotFirstRune.png)
+![World Map](./assets/screenShotWorldMap.png)
+Throughout the game players can save their progress. As players level up they can return to their 'nest' and speak to the elders to gain more spells and abilities. In each land is another rune. Players must battle each type of enemy in a land to unlock the boss of that land.
+![Enemy Land](./assets/screenShotEnemyLand.png)
+![Battle](./assets/screenShotBattle.png)
+After defeating the boss they will collect the rune. Once a player has gathered all the runes a new location will appear on the world map where they will have the opportunity to battle the final boss and win the game.
 
 ## Installation
 
