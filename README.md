@@ -1,6 +1,6 @@
 # DWv01 Dragon Worlds
 
-![New Game](/assets/screenshotNewGame.png)
+![New Game](/assets/screenshotNewGame.png? raw=true)
 
 ## Description
 
