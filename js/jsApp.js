@@ -7,7 +7,7 @@ $(function(){
   function saveGame(){
     localStorage.DWCharacter=JSON.stringify(Hero);
   }//end saveGame function
-  
+
   function continueGame(){
     let archivedCh=JSON.parse(window.localStorage.DWCharacter);
     Hero=new GoodGuy('name','elem');
@@ -31,7 +31,7 @@ $(function(){
         .addClass('pulsing');
     }
   }//end continueGame function
-  
+
   function forceFieldSet(boolVal){
     boolVal?$(`.forceField`).css('z-index',9800):$(`.forceField`).css('z-index',-300);
   }//end forceFieldSet function
@@ -63,7 +63,7 @@ $(function(){
       nextSlide=setTimeout(function(){
         storytelling(slidesClass,slideName,slideIndex+1);
       },transition+(45*dialogLength));
-      
+
       $(`.nextSlideBtn`).click(function(){
         clearTimeout(hideSlide);
         clearTimeout(nextSlide);
@@ -74,7 +74,7 @@ $(function(){
       });
     }//end if/else
   }//end storytelling
-  
+
   let noticeQ=[];
   function notify(){
     //prevent player from clicking anything but the notice box
@@ -105,7 +105,7 @@ $(function(){
     }
     $('.notice').show();
   }//end notify function
-  
+
   function plantTooltips(){
     $('.plant').each(function(){
       let p=$(this).text().trim();
@@ -121,7 +121,7 @@ $(function(){
       }
     });
   }//end plantTooltips function
-  
+
   function updateLesson(type,id,lessonName){
     switch(type){
       case 'abilities':
@@ -143,7 +143,7 @@ $(function(){
       move(camelCase($(this).text()),type);
     });// end click event
   }//end updateLesson
-  
+
   function eldersLessons(type){
     let teachingCounter=0;
     for(let subject in Lessons[type]){
@@ -167,7 +167,7 @@ $(function(){
       }
     }
   }//end eldersLessons
-    
+
   function landPrep(landElem){
     //modify land to match element
     $('.landScreen')
@@ -212,7 +212,7 @@ $(function(){
         .find('.characterName').text(currBoss.name);
     }//end if
   }//end landPrep
-  
+
   function enemyPrep(enemyId,enemyElem){
     $('.EnemyImg').removeClass('dead');
     Enemy= new BadGuy(Enemies[enemyId].name, enemyElem);
@@ -237,7 +237,7 @@ $(function(){
       .find('.charactersContainer')
       .css('background-image', `linear-gradient(145deg, #ff00007a, #be0000c2),${Elements[enemyElem].bgImg}`);
   }
-  
+
   function move(selectedAction,type){
     let turnTaken=false;
     //execute player's action
@@ -255,7 +255,7 @@ $(function(){
         notify();
       }
     }//end if
-    
+
     if(turnTaken){
       //hide battleOptions
         $('.battleOptions').hide();
@@ -285,7 +285,7 @@ $(function(){
         $('.EnemyImg').addClass('dead');
         noticeQ.push(`${Hero.name} defeated ${Enemy.name}`);
         let gainedXP=(rollDice()*Enemy.lvl);
-        
+
         //if the enemy was a boss and it was the first time defeated get rune
         if(Enemy.type==='boss'&&!Enemy.previouslyDefeated){
           Hero.enemiesDefeated.push(Enemy.id);
@@ -325,7 +325,7 @@ $(function(){
             noticeQ.push(`${Enemies[Elements[Enemy.element].boss].name} is challenging you to fight`);
           }
         }//end if
-          
+
         lemmeThink=setTimeout(function(){
           //if the enemy was the final boss show end story arc
           if(Enemy.id==="finalBoss"){
@@ -350,7 +350,7 @@ $(function(){
       }
     }
   };//end move click event
-  
+
   function enemyMove(type){
     let enemyAttacks=Object.keys(Enemy[type]);
     let randomAttackSelector=Math.floor(Math.random()*enemyAttacks.length);
@@ -364,18 +364,18 @@ $(function(){
       Enemy[type][randomAttackChoice].cast.call(Enemy,Hero);
     }
   }//end enemyMove
-  
+
   function rollDice(){
     return Math.ceil(Math.random()*20);
   }//end rollDice
-  
+
   function camelCase(text){
   	let newText=text.split(" ");
   	newText[0]=newText[0].charAt(0).toLowerCase()+newText[0].slice(1);
   	newText=newText.join('');
   	return newText;
   }//end camelCase
-  
+
   function battleUpdate(target,info){
     if(info.startsWith('+')){
       $(`.battleUpdates${target}`)
@@ -414,7 +414,7 @@ $(function(){
     //change hero's element land to say nest
     $(`.${Hero.element}Land`).html(`${Hero.element}<br>Nest`);
   }//end questElements function
-  
+
   //generic character creation class
   class Character{
     constructor(name,element){
@@ -433,11 +433,11 @@ $(function(){
       this.spells={};
       this.image="assets/gamingIcon.png";
     }//end Character constructor
-    
+
     lvlUp() {
       //increase level
       this.lvl+=1;
-    
+
       //update attributes according to element
       switch(this.element){
         case('fire'):
@@ -478,7 +478,7 @@ $(function(){
         }
       }
     }//end lvlUp method
-    
+
     updateAllStats(){
       //update html
       $(`.${this.role}Name`).text(this.name);
@@ -519,16 +519,16 @@ $(function(){
         $(`.${this.role}${base}Bar .progress-bar`).css('width', `${percentage}%`);
       }
     }//end updateStat method
-    
+
     fullHeal(){
       this.updateStat(this.maxHP,"currHP");
     }//end fullHeal method
-    
+
     fullMP(){
       this.updateStat(this.maxMP,"currMP");
     }
   }//end Character constructor
-  
+
   class GoodGuy extends Character{
     constructor(name,element){
       super(name,element);
@@ -541,7 +541,7 @@ $(function(){
       this.enemiesDefeated=[];
       this.bossesUnlocked=[];
     }//end GoodGuy constructor
-    
+
     checkDeath(opponent){
       if(this.currHP<=0){
         //reset enemy
@@ -564,7 +564,7 @@ $(function(){
         $('.battleOptions').fadeIn();
       }//end if
     }//end checkDeath method
-    
+
     gainXP(xpPts){
       this.updateStat(this.xp+=xpPts,'xp');
       if(this.xp>=this.xpToNextLvl){
@@ -579,14 +579,14 @@ $(function(){
       }//end if
     }//end gainXP method
   }//end GoodGuy extension
-  
+
   class BadGuy extends Character{
     constructor(name,element){
       super(name,element);
       this.role='Enemy';
     }//end BadGuy constructor
   }//end BadGuy extension
-  
+
   const Elements={
     fire:{
       color: 'rgba(193, 59, 49 ,0.8)',
@@ -631,7 +631,7 @@ $(function(){
       boss: "finalBoss"
     }
   };
-  
+
   const Enemies={
     finalBoss:{
       id:'finalBoss',
@@ -770,7 +770,7 @@ $(function(){
       spells:['simpleHealing','simpleSpell']
     },
   };//end Enemies
-  
+
   const Plants={
     seaweed: {
       image: "url('assets/seaweed.jpg')",
@@ -809,9 +809,9 @@ $(function(){
       increases: 'agi'
     }
   };//end Plants
-  
+
   //dmg<=0 branch not currently used but prepped for future status effects
-  //hairyCarrie && wrathOfKhan created for developement purposes ^_^
+  // hairyCarrie && wrathOfKhan created for developement purposes ^_^
   const Lessons={
     abilities:{
       hairyCarrie:{
@@ -1239,11 +1239,11 @@ $(function(){
   if(localStorage.DWCharacter===undefined){
     $('#continueGame').hide();
   }//end if ch in local storage display continue btn
-    
+
   //======================================
   // CLICK EVENTS
   //======================================
-  
+
   $('#newGame').click(function(){
     if(localStorage.DWCharacter===undefined){
       changeScreen('welcome','createDragon');
@@ -1265,7 +1265,7 @@ $(function(){
       });
     }//end if
   });//end newGame click event
-  
+
   $('#continueGame').click(function(){
     continueGame();
     changeScreen('welcome','nest');
@@ -1282,7 +1282,7 @@ $(function(){
         .removeClass('pulsing');
     }
   });//end nameDragon keypress blur event
-  
+
   $('.el').hover(function(){
     let elem=$(this).attr('value');
     switch(elem){
@@ -1312,7 +1312,7 @@ $(function(){
         break;
     }
   });
-  
+
   $('.el').on('click', function(e){
     e.preventDefault();
     $('.elSelected').removeClass('elSelected');
@@ -1323,7 +1323,7 @@ $(function(){
       .addClass('pulsing');
     }
   });//end select element click event
-  
+
   $('.createBtn').click(function(e){
     e.preventDefault();
     if($('.nameDragon').val().length===0){
@@ -1360,14 +1360,14 @@ $(function(){
     changeScreen('intro','nest');
     notify(`Ah ${Hero.name}! The elders were looking for you. You should talk to them.`);
   });//end intro button click event
-  
+
   $('.end .skipSlideShowBtn').click(function(){
     changeScreen('end','thx4testing');
     let pauseForCredits=setTimeout(function(){
       changeScreen('thx4testing','welcome');
     },20000);
   });//end end button click event
-  
+
   $('.elder1').click(function(){
     eldersLessons('abilities');
     if(Hero.plantsEaten===0){
@@ -1375,7 +1375,7 @@ $(function(){
     }
     notify();
   });//end elder1 click event
-  
+
   $('.elder2').click(function(){
     eldersLessons('spells');
     if(Hero.runesCollected.indexOf(Hero.element)<0){
@@ -1385,7 +1385,7 @@ $(function(){
     }
     notify();
   });//end elder2 click event
-  
+
   $('.plant').click(function(){
     let plant=$(this).text().trim();
     let attr=Plants[plant].increases;
@@ -1414,7 +1414,7 @@ $(function(){
       }//end if
     }//end if
   });//end plant click event
-  
+
   $('.dragonStatsToggle').click(function(){
     if($(this).children('i').attr('class')==='ion-chevron-down'){
       $('.dragonStats').not('.battleScreen').removeClass('d-none');
@@ -1430,7 +1430,7 @@ $(function(){
         .prev().text('Show Stats');
     }
   })//end dragonStatsToggle click event
-  
+
   $('.toWorldMapBtn').click(function(){
     if(Object.keys(Hero.abilities).length===0){
       notify(`${Hero.name} should talk to both elders before leaving the nest`);
@@ -1439,7 +1439,7 @@ $(function(){
       $('.worldMap').delay(1000).fadeIn('slow');
     }
   });//end toWorldMapBtn click event
-  
+
   $('.worldMapBtn').not('.finalBoss').click(function(){
     let destination=$(this).val();
     if(destination===Hero.element){
@@ -1449,7 +1449,7 @@ $(function(){
       changeScreen('worldMap','landScreen');
     }//end if/else
   });//end worldMapBtn click event
-  
+
   $('.enemy').click(function(){
     $('.battleOptions').hide();
     $('.battleOptions').delay(1700).fadeIn();
@@ -1461,19 +1461,19 @@ $(function(){
       changeScreen('landScreen','battleScreen');
     }
   });//end enemy click event
-  
+
   //battleScreen battlelog/battle info tabs
   $('.tabContainer').tabs();
   var hash=location.hash;
   if(hash){
     $('.tabsContainer').tabs('load',hash)
   }//end tab script
-  
+
   $('.save').click(function(){
     saveGame();
     notify('Your progress has been saved');
   });//end save click event
-  
+
   $('.exit').click(function(){
     //compare current game and saved game
     let savedGame=localStorage.DWCharacter;
@@ -1492,10 +1492,10 @@ $(function(){
       });//end noQuit click event
     }//end if/else
   });//end exit click event
-    
+
   // //---------------------------------Testing
-  // Lessons.abilities.wrathOfKhan.lvl=1;
-  // Lessons.abilities.hairyCarrie.lvl=1;
+  Lessons.abilities.wrathOfKhan.lvl=1;
+  Lessons.abilities.hairyCarrie.lvl=1;
   // //---------------------------------Testing
-  
+
 });//end on load function
