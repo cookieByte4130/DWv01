@@ -644,7 +644,7 @@ $(function(){
     phoenix:{
       id:'phoenix',
       type: 'boss',
-      name:'Navi',
+      name:'Phoenix',
       image:'assets/phoenix.jpg',
       abilities:['swoop','bite','claw'],
       spells:['simpleHealing','manaBlast','spellofSages']
@@ -652,7 +652,7 @@ $(function(){
     golem:{
       id:'golem',
       type: 'boss',
-      name:'Ganon',
+      name:'Golem',
       image:"assets/golem.jpg",
       abilities:['bite','spit','claw'],
       spells:['simpleHealing','simpleSpell']
@@ -660,7 +660,7 @@ $(function(){
     leviathan:{
       id:'leviathan',
       type: 'boss',
-      name:'Plankton',
+      name:'Leviathan',
       image:'assets/leviathan.png',
       abilities:['bite','spit'],
       spells:['simpleHealing','manaBlast','spellofSages']
@@ -668,7 +668,7 @@ $(function(){
     gryphon:{
       id:'gryphon',
       type: 'boss',
-      name:'Birdo',
+      name:'Gryphon',
       image:'assets/gryphon.jpg',
       abilities: ['swoop','bite','claw','spit'],
       spells:['simpleHealing','manaBlast','spellofSages','dragonBreath']
@@ -676,7 +676,7 @@ $(function(){
     camel:{
       id:'camel',
       type:'lesserCr',
-      name:'Oil Rig',
+      name:'Camel',
       image:"assets/camel.jpg",
       abilities:['spit','bite'],
       spells:['simpleHealing','simpleSpell']
@@ -684,7 +684,7 @@ $(function(){
     lizard: {
       id:'lizard',
       type:'lesserCr',
-      name:'Koopa Troopa',
+      name:'Lizard',
       image:"assets/lizard.jpg",
       abilities:['spit','bite'],
       spells:['simpleHealing','simpleSpell']
@@ -692,7 +692,7 @@ $(function(){
     coyote: {
       id:'coyote',
       type:'lesserCr',
-      name:'Mononoke Hima',
+      name:'Coyote',
       image:"assets/coyote.jpg",
       abilities:['bite','claw'],
       spells:['simpleHealing','simpleSpell']
@@ -700,7 +700,7 @@ $(function(){
     goat: {
       id:'goat',
       type:'lesserCr',
-      name:'Mem Ick',
+      name:'Goat',
       image:"assets/goat.jpg",
       abilities:['bite','spit'],
       spells:['simpleHealing','simpleSpell']
@@ -708,7 +708,7 @@ $(function(){
     bat:{
       id:'bat',
       type:'lesserCr',
-      name:'Stich',
+      name:'Bat',
       image:"assets/bat.jpg",
       abilities:['swoop','bite'],
       spells:['simpleHealing','simpleSpell']
@@ -716,7 +716,7 @@ $(function(){
     eagle:{
       id:'eagle',
       type:'lesserCr',
-      name:'Hal',
+      name:'Eagle',
       image:"assets/eagle.jpg",
       abilities:['swoop','claw'],
       spells:['simpleHealing','simpleSpell']
@@ -724,7 +724,7 @@ $(function(){
     fish:{
       id:'fish',
       type:'lesserCr',
-      name:'Nemo',
+      name:'Fish',
       image:"assets/fish.jpg",
       abilities:['bite','swipe'],
       spells:['simpleHealing','simpleSpell']
@@ -732,7 +732,7 @@ $(function(){
     crab:{
       id:'crab',
       type:'lesserCr',
-      name:'Tamatoa',
+      name:'Crab',
       image:"assets/crab.jpg",
       abilities:['claw','bite'],
       spells:['simpleHealing','simpleSpell']
@@ -740,7 +740,7 @@ $(function(){
     seabird:{
       id: 'seabird',
       type:'lesserCr',
-      name: 'Squidworth',
+      name: 'Seabird',
       image:"assets/seabird.jpg",
       abilities:['swoop','spit'],
       spells:['simpleHealing','simpleSpell']
@@ -748,7 +748,7 @@ $(function(){
     birds:{
       id:'birds',
       type:'lesserCr',
-      name: 'Donald Duck',
+      name: 'Bird',
       image:"assets/birds.jpg",
       abilities:['swoop'],
       spells:['simpleHealing','simpleSpell']
@@ -756,7 +756,7 @@ $(function(){
     bees:{
       id:'bees',
       type:'lesserCr',
-      name: 'Spy Bot',
+      name: 'Bees',
       image:"assets/bees.jpg",
       abilities:['bite','swoop'],
       spells:['simpleHealing','simpleSpell']
@@ -764,7 +764,7 @@ $(function(){
     buffalo:{
       id:'buffalo',
       type:'lesserCr',
-      name:'Ava Tarr',
+      name:'Buffalo',
       image:"assets/buffalo.png",
       abilities:['bite','spit'],
       spells:['simpleHealing','simpleSpell']
