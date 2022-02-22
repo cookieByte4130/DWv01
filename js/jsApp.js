@@ -1494,8 +1494,8 @@ $(function(){
   });//end exit click event
 
   // //---------------------------------Testing
-  Lessons.abilities.wrathOfKhan.lvl=1;
-  Lessons.abilities.hairyCarrie.lvl=1;
+  // Lessons.abilities.wrathOfKhan.lvl=1;
+  // Lessons.abilities.hairyCarrie.lvl=1;
   // //---------------------------------Testing
 
 });//end on load function
